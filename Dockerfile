@@ -14,6 +14,7 @@ RUN apk update \
                           make \
                           openssl \
                           squashfs-tools \
+                          tzdata \
                           util-linux-dev \
                           wget
 
@@ -24,7 +25,8 @@ RUN export VERSION=3.7.1 \
     && ./mconfig -p /usr/local/singularity \
     && cd builddir \
     && make \
-    && make install
+    && make install \
+    && cp /usr/share/zoneinfo/UTC /etc/localtime
 
 WORKDIR /work
 ENTRYPOINT ["/usr/local/singularity/bin/singularity"]
