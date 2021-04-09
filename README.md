@@ -22,7 +22,7 @@ image. Start by creating your Dockerfile and building your image, just like you
 normally would. You then need to save your image to a tarball:
 
 ```bash
-docker save <IMAGE ID> docker.tar
+docker save <IMAGE ID> -o docker.tar
 ```
 
 The `<IMAGE ID>` *must* be the exact ID that you see when you list your images
