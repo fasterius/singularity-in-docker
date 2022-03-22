@@ -18,9 +18,9 @@ RUN apk update \
                           util-linux-dev \
                           wget
 
-RUN export VERSION=3.7.1 \
-    && wget https://github.com/sylabs/singularity/releases/download/v$VERSION/singularity-$VERSION.tar.gz \
-    && tar -xzf singularity-$VERSION.tar.gz \
+RUN export VERSION=3.9.6 \
+    && wget https://github.com/sylabs/singularity/releases/download/v$VERSION/singularity-ce-$VERSION.tar.gz \
+    && tar -xzf singularity-ce-$VERSION.tar.gz && mv singularity-ce-$VERSION singularity \
     && cd singularity \
     && ./mconfig -p /usr/local/singularity \
     && cd builddir \
